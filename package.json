@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "job application tracker",
   "scripts": {
-    "start": "server/index.js"
+    "start": "server/index.js",
+    "react-dev": "webpack -d --watch"
   },
   "repository": {
     "type": "git",
