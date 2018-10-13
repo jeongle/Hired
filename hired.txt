@@ -1,0 +1,22 @@
+NOTES
+
+1. Main Idea: User tracks state of job recruitment applications
+    - This involves the date of application, company, position, date applied, and whether or not heard back
+    - All of this information will be stored in the db, and then upon request results will be aggregated
+      and displayed in some sort of plot/graph
+    - To Apply section with job links
+
+2. Data shape: Things to include
+    - Job title
+    - Location
+    - company
+    - Salary
+    - URL
+    - STATUS (ie accepted or declined)
+    - coding challenge
+    - phone interview
+    - onsite
+    - Deadline
+    - References/referrals
+    - todos
+    - employer contact info for followup
