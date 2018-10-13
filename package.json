@@ -1,0 +1,18 @@
+{
+  "name": "hired",
+  "version": "1.0.0",
+  "description": "job application tracker",
+  "scripts": {
+    "start": "server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeongle/Hired.git"
+  },
+  "author": "Justin Jeong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jeongle/Hired/issues"
+  },
+  "homepage": "https://github.com/jeongle/Hired#readme"
+}
