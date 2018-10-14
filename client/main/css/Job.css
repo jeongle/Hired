@@ -1,0 +1,5 @@
+.Job{
+  box-shadow: 2px 2px 2px 2px #dad4d4;
+  display: grid;
+  grid-template-rows: auto;
+}

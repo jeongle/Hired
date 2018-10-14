@@ -12,18 +12,18 @@ class Applications extends Component {
   }
   render() {
     return (
-      <div class="Applications">
-        <div class="todo">
+      <div className="Applications">
+        <div className="todo">
           {this.state.todos.map(todo => (
             <Job todo={todo} key={todo.id} />
           ))}
         </div>
-        <div class="inProg">
+        <div className="inProg">
           {this.state.inProgs.map(todo => (
             <Job todo={todo} key={todo.id} />
           ))}
         </div>
-        <div class="completed">
+        <div className="completed">
           {this.state.completeds.map(todo => (
             <Job todo={todo} key={todo.id} />
           ))}

@@ -48,9 +48,9 @@ class App extends Component {
     applications = (this.state.showApps) ? <Applications applications={this.state.userData.apps} /> : null;
     plots = (this.state.showPlots) ? <Plots /> : null;
     return (
-      <div class="App">
+      <div className="App">
         <Navbar />
-        <div class="content">
+        <div className="content">
           {applications}
           {plots}
         </div>
