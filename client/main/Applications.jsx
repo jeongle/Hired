@@ -15,12 +15,18 @@ class Applications extends Component {
       <div class="Applications">
         <div class="todo">
           {this.state.todos.map(todo => (
-            <Job todo={todo} key={todo.id}/>
+            <Job todo={todo} key={todo.id} />
           ))}
         </div>
         <div class="inProg">
+          {this.state.inProgs.map(todo => (
+            <Job todo={todo} key={todo.id} />
+          ))}
         </div>
         <div class="completed">
+          {this.state.completeds.map(todo => (
+            <Job todo={todo} key={todo.id} />
+          ))}
         </div>
       </div>
     )
