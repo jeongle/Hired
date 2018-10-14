@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "job application tracker",
   "scripts": {
-    "start": "server/index.js",
+    "start": "nodemon server/server.js",
     "react-dev": "webpack -d --watch"
   },
   "repository": {

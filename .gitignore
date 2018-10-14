@@ -1,1 +1,4 @@
 node_modules
+*.json
+*.hot-update.js
+hired_bundle.js
