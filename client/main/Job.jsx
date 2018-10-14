@@ -2,18 +2,18 @@ import React from "react";
 
 const Job = (props) => {
   return(
-    <div>
+    <div className="Job">
       <div className="title">
-        {this.props.jobTitle}
+        {props.todo.jobTitle}
       </div>
       <div className="company">
-        {this.props.company}
+        {props.todo.company}
       </div>
       <div className="location">
-        {this.props.location}
+        {props.todo.location}
       </div>
       <div className="url">
-        {this.props.url}
+        {props.todo.url}
       </div>
     </div>
   )
