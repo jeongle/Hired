@@ -8,18 +8,48 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      userData: null,
+      userData: {
+        apps: {
+          todo: [
+            {
+              jobTitle: "engineer",
+              company: "bro to do ",
+              location: "San Brocisco, CA",
+              url: "brobro.com",
+              id: 1,
+            }
+          ],
+          inProg: [
+            {
+              jobTitle: "engineer",
+              company: "bro in prog",
+              location: "San Brocisco, CA",
+              url: "brobro.com",
+              id: 2,
+            }
+          ],
+          completed: [
+            {
+              jobTitle: "engineer",
+              company: "bro completed",
+              location: "San Brocisco, CA",
+              url: "brobro.com",
+              id: 3,
+            }
+          ],
+        }
+      },
       showApps: true,
       showPlots: false,
     }
   }
   render() {
     let applications, plots;
-    applications = (this.state.showApps) ? <Applications/> : null;
-    plots = (this.state.showPlots) ? <Plots/> : null;
+    applications = (this.state.showApps) ? <Applications applications={this.state.userData.apps} /> : null;
+    plots = (this.state.showPlots) ? <Plots /> : null;
     return (
       <div class="App">
-        <Navbar/>
+        <Navbar />
         <div class="content">
           {applications}
           {plots}
