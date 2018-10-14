@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Job from "./Job.jsx";
+import "./css/Applications.css";
 
 class Applications extends Component {
   constructor(props) {

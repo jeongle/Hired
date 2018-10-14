@@ -17,6 +17,13 @@ class App extends Component {
               location: "San Brocisco, CA",
               url: "brobro.com",
               id: 1,
+            },
+            {
+              jobTitle: "engineer2",
+              company: "bro to do 2",
+              location: "San Brocisco, CA",
+              url: "brobro.com",
+              id: 2,
             }
           ],
           inProg: [
