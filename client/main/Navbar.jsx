@@ -1,15 +1,14 @@
 import React from "react";
-import Applications from "./Applications.jsx";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import "./css/Navbar.css"
+import { Route, Link } from "react-router-dom";
 
 const Navbar = () => (
-  <Router>
-    <div>
-      <Link to="/">Home</Link>
-      <Link to="/about">Analytics</Link>
-      <Route exact path="/" component={Applications} />
+  <div class="Navbar">
+    <div class="container">
+      <a>Home</a>
+      <a>Analytics</a>
     </div>
-  </Router>
+  </div>
 );
 
 export default Navbar;
