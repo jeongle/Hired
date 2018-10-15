@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Navbar from "./Navbar.jsx";
+import Header from "./Header.jsx";
 import Applications from "./Applications.jsx";
 import Plots from "./Plots.jsx";
 import "./css/App.css";
@@ -32,7 +33,7 @@ class App extends Component {
               company: "bro in prog",
               location: "San Brocisco, CA",
               url: "brobro.com",
-              id: 2,
+              id: 3,
             }
           ],
           completed: [
@@ -41,7 +42,7 @@ class App extends Component {
               company: "bro completed",
               location: "San Brocisco, CA",
               url: "brobro.com",
-              id: 3,
+              id: 4,
             }
           ],
         }
@@ -55,11 +56,14 @@ class App extends Component {
     applications = (this.state.showApps) ? <Applications applications={this.state.userData.apps} /> : null;
     plots = (this.state.showPlots) ? <Plots /> : null;
     return (
-      <div className="App">
-        <Navbar />
-        <div className="content">
-          {applications}
-          {plots}
+      <div className="container">
+        <Header />
+        <div className="App-body">
+          <Navbar />
+          <div className="content">
+            {applications}
+            {plots}
+          </div>
         </div>
       </div>
     );

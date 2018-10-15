@@ -1,4 +1,4 @@
-.App {
+.App-body {
   display: grid;
   grid-template-columns: 5% 95%;
   position: fixed;
@@ -9,5 +9,11 @@
 }
 
 .content{
+  padding-top: 5%;
   padding-left: 10px;
+}
+
+.comtainer{
+  display: grid;
+  grid-template-rows: auto;
 }
