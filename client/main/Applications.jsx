@@ -1,6 +1,11 @@
 import React, { Component } from "react";
 import Job from "./Job.jsx";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import "./css/Applications.css";
+
+library.add(faPlus);
 
 class Applications extends Component {
   constructor(props) {
@@ -16,7 +21,10 @@ class Applications extends Component {
       <div className="Applications">
         <div className="todo">
           <div className="center">
-            <span>TO APPLY</span>
+            <span>TO APPLY </span>
+            <button type="button" className="plusbutt">
+              <FontAwesomeIcon icon="plus" />
+            </button>
             {this.state.todos.map(todo => (
               <Job todo={todo} key={todo.id} />
             ))}
@@ -24,7 +32,10 @@ class Applications extends Component {
         </div>
         <div className="inProg">
           <div className="center">
-            <span>IN PROGRESS</span>
+            <span>IN PROGRESS </span>
+            <button type="button" className="plusbutt">
+              <FontAwesomeIcon icon="plus" />
+            </button>
             {this.state.inProgs.map(todo => (
               <Job todo={todo} key={todo.id} />
             ))}
@@ -32,7 +43,10 @@ class Applications extends Component {
         </div>
         <div className="completed">
           <div className="center">
-            <span>COMPLETED</span>
+            <span>COMPLETED </span>
+            <button type="button" className="plusbutt">
+              <FontAwesomeIcon icon="plus" />
+            </button>
             {this.state.completeds.map(todo => (
               <Job todo={todo} key={todo.id} />
             ))}

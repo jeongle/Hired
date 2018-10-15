@@ -14,3 +14,18 @@ span{
 .center{
   text-align: center;
 }
+
+.plusbutt{
+  cursor: pointer;
+  border: none;
+  background-color: inherit;
+  outline: none;
+  opacity: 1;
+  transition: 0.3s;
+  color: rgba(71, 71, 71, 0.582);
+  font-size: 16px;
+}
+
+.plusbutt:hover{
+  color: rgba(33, 66, 109, 0.836)
+}

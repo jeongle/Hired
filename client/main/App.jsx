@@ -52,6 +52,7 @@ class App extends Component {
     }
     this.renderApps = this.renderApps.bind(this);
     this.renderPlots = this.renderPlots.bind(this);
+    this.addApp = this.addApp.bind(this);
   }
 
   renderApps() {
@@ -62,10 +63,18 @@ class App extends Component {
     this.setState({showApps: false, showPlots: true});
   }
 
+  addApp(category, job) {
+    this.setState(userData.apps[category].push(job));
+  }
+
   render() {
     let applications, plots;
-    applications = (this.state.showApps) ? <Applications applications={this.state.userData.apps} /> : null;
-    plots = (this.state.showPlots) ? <Plots applications={this.state.userData.apps}/> : null;
+    applications = (this.state.showApps) ? 
+      <Applications applications={this.state.userData.apps} addApp={this.addApp}/> : 
+      null;
+    plots = (this.state.showPlots) ? 
+      <Plots applications={this.state.userData.apps}/> : 
+      null;
     return (
       <div>
         <Navbar renderApps={this.renderApps} renderPlots={this.renderPlots}/>

@@ -23,7 +23,7 @@
   width: 100%;
 }
 
-button {
+.button {
   position: relative;
   display: inline-block;
   cursor: pointer;
@@ -36,7 +36,7 @@ button {
   opacity: 1;
   transition: 0.4s;
 }
-button:hover{
+.button:hover{
   opacity: 0.5;
 }
 
