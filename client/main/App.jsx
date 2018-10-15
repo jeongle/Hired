@@ -50,14 +50,25 @@ class App extends Component {
       showApps: true,
       showPlots: false,
     }
+    this.renderApps = this.renderApps.bind(this);
+    this.renderPlots = this.renderPlots.bind(this);
   }
+
+  renderApps() {
+    this.setState({showApps: true, showPlots: false});
+  }
+
+  renderPlots() {
+    this.setState({showApps: false, showPlots: true});
+  }
+
   render() {
     let applications, plots;
     applications = (this.state.showApps) ? <Applications applications={this.state.userData.apps} /> : null;
-    plots = (this.state.showPlots) ? <Plots /> : null;
+    plots = (this.state.showPlots) ? <Plots applications={this.state.userData.apps}/> : null;
     return (
       <div>
-        <Navbar />
+        <Navbar renderApps={this.renderApps} renderPlots={this.renderPlots}/>
         <div className="content">
           <Header />
           <div className="App-body">
