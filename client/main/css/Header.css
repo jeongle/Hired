@@ -1,5 +1,11 @@
 .Header{
-  margin-left: 10%;
-  background-color: white;
-  font-size: 26px;
+  position: fixed;
+  width: 100%;
+}
+
+.logo{
+  font-family: futura;
+  letter-spacing: 2px;
+  color: rgb(71, 71, 71);
+  font-size: 25px;
 }
