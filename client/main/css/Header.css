@@ -1,0 +1,14 @@
+.Header{
+  position: fixed;
+  width: 100%;
+  background-color: white;
+  border-bottom: 1px solid rgba(201, 201, 201, 0.542);
+}
+
+.logo{
+  padding-left: 10px;
+  font-family: futura;
+  letter-spacing: 2px;
+  color: rgb(71, 71, 71);
+  font-size: 25px;
+}

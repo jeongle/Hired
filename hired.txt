@@ -7,12 +7,12 @@ NOTES
     - To Apply section with job links
 
 2. Data shape: Things to include
-    - Job title
-    - Location
-    - company
+    - Job title  ************ MVP ************
+    - Location  ************ MVP ************
+    - company  ************ MVP ************
+    - URL  ************ MVP ************
+    - STATUS (ie accepted or declined)  ************ MVP ************
     - Salary
-    - URL
-    - STATUS (ie accepted or declined)
     - coding challenge
     - phone interview
     - onsite

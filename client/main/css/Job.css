@@ -1,0 +1,17 @@
+.Job{
+  box-shadow: 0 3px 3px #a7a7a7;
+  border: 1px solid rgba(201, 201, 201, 0.542);
+  display: grid;
+  grid-template-rows: auto;
+  padding: 5px 5px 5px 5px;
+  margin: 10px;
+  border-radius: 12px;
+  color: rgb(71, 71, 71);
+  text-align: left;
+  background-color: rgba(255, 255, 255, 0.542);
+}
+
+.title{
+  font-size: 20px;
+  font-weight: 700;
+}
