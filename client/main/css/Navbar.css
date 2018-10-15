@@ -1,16 +1,46 @@
-.Navbar{
+.Navbar {
   display: block;
   position: fixed;
   height: 100%;
-  background: rgb(25, 55, 90);
+  width: 5%;
+  background: rgba(33, 66, 109, 0.836);
   margin: 0;
   padding: 0;
-  overflow: auto;
 }
 
-.container{
+.container {
+  height: inherit;
   display: grid;
   grid-template-columns: auto;
-  grid-template-rows: auto auto;
-  width: 5%;
+  grid-template-rows: 90px 90px;
+  justify-items: center;
+  align-items: end;
+
 }
+
+.button-contents {
+  display: block;
+  width: 100%;
+}
+
+button {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  border: none;
+  background-color: inherit;
+  width: inherit;
+  color: rgb(243, 243, 243);
+  font-size: 30px;
+  outline: none;
+  opacity: 1;
+  transition: 0.4s;
+}
+button:hover{
+  opacity: 0.5;
+}
+
+hr {
+  width: 80%;
+}
+
