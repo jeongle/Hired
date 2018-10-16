@@ -4,16 +4,21 @@ const Job = (props) => {
   return (
     <div className="Job">
       <div className="title">
-        {props.todo.jobTitle}
+        <div>{props.todo.jobTitle}</div>
+        <button 
+          className="delete"
+          onClick={() => props.removeApp(props.section, props.index)}>
+          X
+        </button>
       </div>
       <div className="company">
-        {props.todo.company}
+        Company: {props.todo.company}
       </div>
       <div className="location">
-        {props.todo.location}
+        Location: {props.todo.location}
       </div>
       <div className="url">
-        {props.todo.url}
+        <a target="_blank" href={`https://www.${props.todo.url}` }>Link</a>
       </div>
     </div>
   )
