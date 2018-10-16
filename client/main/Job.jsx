@@ -4,6 +4,7 @@ const Job = (props) => {
   return (
     <div className="Job">
       <div className="title">
+        <button onClick={() => props.removeApp(props.section, props.index)}>X</button>
         {props.todo.jobTitle}
       </div>
       <div className="company">

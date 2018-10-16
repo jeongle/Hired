@@ -19,6 +19,7 @@ class App extends Component {
     this.renderApps = this.renderApps.bind(this);
     this.renderPlots = this.renderPlots.bind(this);
     this.addApp = this.addApp.bind(this);
+    this.removeApp = this.removeApp.bind(this);
   }
 
   renderApps() {
@@ -35,12 +36,23 @@ class App extends Component {
     });
   }
 
+  removeApp(category, index) {
+    const section = this.state[category].filter((value, i) => {
+      return (i !== index);
+    });
+
+    this.setState({
+      [`${category}`]: section,
+    })
+  }
+
   render() {
     let applications, plots;
     applications = (this.state.showApps) ?
       <Applications 
         applications={[this.state.todos, this.state.inProgs, this.state.completeds]} 
-        addApp={this.addApp} /> :
+        addApp={this.addApp} 
+        removeApp={this.removeApp}/> :
       null;
     plots = (this.state.showPlots) ?
       <Plots /> :
