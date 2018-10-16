@@ -1,5 +1,5 @@
 import React from "react";
-import { defaults, Doughnut } from "react-chartjs-2";
+import { defaults, Doughnut, Bar } from "react-chartjs-2";
 
 defaults.global.defaultFontFamily = "lato";
 
@@ -8,22 +8,23 @@ const Plots = (props) => {
     labels: ['To Do', 'In Progress', 'Completed'],
     datasets: [{
       data: props.applications.map(section => section.length),
-      backgroundColor:[
+      backgroundColor: [
         'rgba(255,105,145,0.6)',
         'rgba(155,100,210,0.6)',
         'rgba(90,178,255,0.6)',
       ]
     }]
   };
+
   return (
     <div>
-      <Doughnut 
+      <Doughnut
         data={doughnutData}
-        width={250}
-        height={250}
+        width={500}
+        height={500}
         options={{
           maintainAspectRatio: false
-        }}/>
+        }} />
     </div>
   )
 }

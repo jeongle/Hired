@@ -29,3 +29,46 @@
   font-size: 16px;
   text-align: right;
 }
+
+.prog {
+  cursor: pointer;
+  border: none;
+  background-color: inherit;
+  outline: none;
+  opacity: 1;
+  transition: 0.3s;
+  color: rgba(71, 71, 71, 0.582);
+  font-size: 20px;
+  text-align: right;
+}
+
+.url {
+  display: grid;
+  grid-template-columns: 40% 60%;
+}
+
+.offer {
+  width: 120px;
+  cursor: pointer;
+  background-color: rgba(75, 160, 107, 0.678);
+  outline: none;
+  opacity: 1;
+  transition: 0.3s;
+  color: rgba(71, 71, 71, 0.582);
+  font-size: 15px;
+  text-align: center;
+  border-radius: 2px;
+}
+
+.rejection {
+  width: 120px;
+  cursor: pointer;
+  background-color: rgba(228, 72, 72, 0.719);
+  outline: none;
+  opacity: 1;
+  transition: 0.3s;
+  color: rgba(71, 71, 71, 0.582);
+  font-size: 15px;
+  text-align: center;
+  border-radius: 2px;
+}

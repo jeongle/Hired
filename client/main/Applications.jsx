@@ -60,7 +60,13 @@ class Applications extends Component {
                 <FontAwesomeIcon icon="plus" />
               </button>
               {this.props.applications[0].map((todo, index) => (
-                <Job todo={todo} key={index} index={index} section={'todos'} removeApp={this.props.removeApp} />
+                <Job 
+                  todo={todo} 
+                  key={index} 
+                  index={index} 
+                  section={'todos'} 
+                  removeApp={this.props.removeApp} 
+                  progressApp={this.props.progressApp} />
               ))}
             </div>
           </div>
@@ -71,7 +77,13 @@ class Applications extends Component {
                 <FontAwesomeIcon icon="plus" />
               </button>
               {this.props.applications[1].map((todo, index) => (
-                <Job todo={todo} key={index} index={index} section={'inProgs'} removeApp={this.props.removeApp} />
+                <Job 
+                  todo={todo} 
+                  key={index} 
+                  index={index} 
+                  section={'inProgs'} 
+                  removeApp={this.props.removeApp} 
+                  progressApp={this.props.progressApp} />
               ))}
             </div>
           </div>
@@ -82,7 +94,13 @@ class Applications extends Component {
                 <FontAwesomeIcon icon="plus" />
               </button>
               {this.props.applications[2].map((todo, index) => (
-                <Job todo={todo} key={index} index={index} section={'completeds'} removeApp={this.props.removeApp} />
+                <Job 
+                  todo={todo} 
+                  key={index} 
+                  index={index} 
+                  section={'completeds'} 
+                  removeApp={this.props.removeApp} 
+                  offerApp={this.props.offerApp} />
               ))}
             </div>
           </div>

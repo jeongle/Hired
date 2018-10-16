@@ -21,6 +21,8 @@ class App extends Component {
     this.renderPlots = this.renderPlots.bind(this);
     this.addApp = this.addApp.bind(this);
     this.removeApp = this.removeApp.bind(this);
+    this.progressApp = this.progressApp.bind(this);
+    this.offerApp = this.offerApp.bind(this);
   }
 
   renderApps() {
@@ -41,10 +43,29 @@ class App extends Component {
     const section = this.state[category].filter((value, i) => {
       return (i !== index);
     });
-
+    console.log(section);
     this.setState({
       [`${category}`]: section,
     })
+  }
+
+  progressApp(category, index) {
+    let job = this.state[category][index];
+    this.removeApp(category, index);
+    if (category === 'todos') {
+      this.addApp('inProgs', job);
+    }
+    if (category === 'inProgs') {
+      this.addApp('completeds', job);
+    }
+    alert('Great job brother');
+  }
+
+  offerApp(status, index) {
+    let job = this.state.completeds[index];
+    job.status = status;
+    this.forceUpdate();
+    (status === 'offer') ? alert('You are a CS GOD') : alert('U suck');
   }
 
   render() {
@@ -53,7 +74,9 @@ class App extends Component {
       <Applications 
         applications={[this.state.todos, this.state.inProgs, this.state.completeds]} 
         addApp={this.addApp} 
-        removeApp={this.removeApp}/> :
+        removeApp={this.removeApp}
+        progressApp={this.progressApp}
+        offerApp={this.offerApp}/> :
       null;
     plots = (this.state.showPlots) ?
       <Plots 
