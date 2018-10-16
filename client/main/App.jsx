@@ -55,7 +55,8 @@ class App extends Component {
         removeApp={this.removeApp}/> :
       null;
     plots = (this.state.showPlots) ?
-      <Plots /> :
+      <Plots 
+        applications={[this.state.todos, this.state.inProgs, this.state.completeds]} /> :
       null;
       
     return (
