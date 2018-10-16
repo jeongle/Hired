@@ -81,6 +81,7 @@ class Applications extends Component {
                 <Job 
                   todo={todo} 
                   key={todo._id} 
+                  i={index}
                   index={todo._id} 
                   section={'inProgs'} 
                   removeApp={this.props.removeApp} 

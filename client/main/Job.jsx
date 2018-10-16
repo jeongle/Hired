@@ -30,7 +30,7 @@ const Job = (props) => {
         <div>{props.todo.jobTitle}</div>
         <button 
           className="delete"
-          onClick={() => props.removeApp(props.section, props.index)}>
+          onClick={() => props.removeApp(props.section, props.index, props.i)}>
           X
         </button>
       </div>

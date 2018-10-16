@@ -11,9 +11,9 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      todos: dummyData.todos,
-      inProgs: dummyData.inProgs,
-      completeds: dummyData.completeds,
+      todos: [],
+      inProgs: [],
+      completeds: [],
       showApps: true,
       showPlots: false,
     },
@@ -53,34 +53,35 @@ class App extends Component {
   }
 
   addApp(category, job) {
-    axios.post('/applications', {
-      section: category,
-      jobTitle: job.jobTitle,
-      company: job.company,
-      location: job.location,
-      url: job.url,
-      status: job.status,
-      deadline: job.deadline
-    })
-    .then(() => this.getAll())
-    .catch(() => console.log('error posting'));
-    // this.setState({
-    //   [`${category}`]: [...this.state[category], job],
-    // });
+    // axios.post('/applications', {
+    //   section: category,
+    //   jobTitle: job.jobTitle,
+    //   company: job.company,
+    //   location: job.location,
+    //   url: job.url,
+    //   status: job.status,
+    //   deadline: job.deadline
+    // })
+    // .then(() => this.getAll())
+    // .catch(() => console.log('error posting'));
+    this.setState({
+      [`${category}`]: [...this.state[category], job],
+    });
   }
 
-  removeApp(category, index) {
-    axios.delete('/applications/' + index)
-      .then(() => this.getAll())
-      .catch(() => console.log('unsuccessful deletion'))
-    // this.setState({
-    //   [`${category}`]: section,
-    // })
+  removeApp(category, index, i) {
+    // axios.delete('/applications/' + index)
+    //   .then(() => this.getAll())
+    //   .catch(() => console.log('unsuccessful deletion'))
+    let section = this.state[category][i]
+    this.setState({
+      [`${category}`]: section,
+    })
   }
 
   progressApp(category, index, i) {
     let job = this.state[category][i];
-    this.removeApp(category, index);
+    this.removeApp(category, i);
     if (category === 'todos') {
       this.addApp('inProgs', job);
     }
