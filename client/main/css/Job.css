@@ -1,4 +1,4 @@
-.Job{
+.Job { 
   box-shadow: 0 3px 3px #a7a7a7;
   border: 1px solid rgba(201, 201, 201, 0.542);
   display: grid;
@@ -11,7 +11,21 @@
   background-color: rgba(255, 255, 255, 0.542);
 }
 
-.title{
+.title {
   font-size: 20px;
   font-weight: 700;
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.delete {
+  cursor: pointer;
+  border: none;
+  background-color: inherit;
+  outline: none;
+  opacity: 1;
+  transition: 0.3s;
+  color: rgba(71, 71, 71, 0.582);
+  font-size: 16px;
+  text-align: right;
 }
