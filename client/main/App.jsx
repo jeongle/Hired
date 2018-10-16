@@ -3,6 +3,7 @@ import Navbar from "./Navbar.jsx";
 import Header from "./Header.jsx";
 import Applications from "./Applications.jsx";
 import Plots from "./Plots.jsx";
+import axios from 'axios';
 import "./css/App.css";
 import dummyData from './dummydata.js';
 

@@ -16,4 +16,9 @@ app.post('/applications', (req, res) => {
   res.send('u suck');
 });
 
+app.delete('/applications/:app', (req, res) => {
+  console.log('Deleting this application, brother');
+  res.send('I suck');
+})
+
 app.listen(port, () => console.log(`Listening on ${port} brother`));
