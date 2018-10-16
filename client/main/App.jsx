@@ -25,6 +25,25 @@ class App extends Component {
     this.offerApp = this.offerApp.bind(this);
   }
 
+  getAll() {
+    axios.get('/applications')
+      .then(res => {
+        this.setState({
+          todos: res.data.todos,
+          inProgs: res.data.inProgs,
+          completeds: res.data.completeds,
+        })
+      })
+      .catch(err => {
+        console.log(err);
+      })
+      console.log(this.state);
+  }
+
+  componentDidMount() {
+    this.getAll();
+  }
+
   renderApps() {
     this.setState({ showApps: true, showPlots: false });
   }
@@ -34,23 +53,33 @@ class App extends Component {
   }
 
   addApp(category, job) {
-    this.setState({
-      [`${category}`]: [...this.state[category], job],
-    });
+    axios.post('/applications', {
+      section: category,
+      jobTitle: job.jobTitle,
+      company: job.company,
+      location: job.location,
+      url: job.url,
+      status: job.status,
+      deadline: job.deadline
+    })
+    .then(() => this.getAll())
+    .catch(() => console.log('error posting'));
+    // this.setState({
+    //   [`${category}`]: [...this.state[category], job],
+    // });
   }
 
   removeApp(category, index) {
-    const section = this.state[category].filter((value, i) => {
-      return (i !== index);
-    });
-    console.log(section);
-    this.setState({
-      [`${category}`]: section,
-    })
+    axios.delete('/applications/' + index)
+      .then(() => this.getAll())
+      .catch(() => console.log('unsuccessful deletion'))
+    // this.setState({
+    //   [`${category}`]: section,
+    // })
   }
 
-  progressApp(category, index) {
-    let job = this.state[category][index];
+  progressApp(category, index, i) {
+    let job = this.state[category][i];
     this.removeApp(category, index);
     if (category === 'todos') {
       this.addApp('inProgs', job);
@@ -61,8 +90,8 @@ class App extends Component {
     alert('Great job brother');
   }
 
-  offerApp(status, index) {
-    let job = this.state.completeds[index];
+  offerApp(status, index, i) {
+    let job = this.state.completeds[i];
     job.status = status;
     this.forceUpdate();
     (status === 'offer') ? alert('You are a CS GOD') : alert('U suck');
@@ -72,7 +101,9 @@ class App extends Component {
     let applications, plots;
     applications = (this.state.showApps) ?
       <Applications 
-        applications={[this.state.todos, this.state.inProgs, this.state.completeds]} 
+        todos={this.state.todos}
+        inProgs={this.state.inProgs}
+        completeds={this.state.completeds} 
         addApp={this.addApp} 
         removeApp={this.removeApp}
         progressApp={this.progressApp}

@@ -1,24 +1,33 @@
 const express = require('express');
 const path = require('path');
 const port = process.env.PORT || 3000;
+const db = require('../database/database.js');
+const bodyParser = require('body-parser');
 
 const app = express();
 
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 app.use('/', express.static(path.join(__dirname, '../public')));
 
 app.get('/applications', (req, res) => {
-  console.log('Getting all your applications, brother');
-  res.send('suck u');
+  db.getAllJobs((err, data) => {
+    res.send(data);
+  })
 });
 
 app.post('/applications', (req, res) => {
-  console.log('Posting a new application, brother');
+  db.postNewJob(req.body, (err, suc) => {
+    if (err) {};
+  })
   res.send('u suck');
 });
 
-app.delete('/applications/:app', (req, res) => {
-  console.log('Deleting this application, brother');
-  res.send('I suck');
+app.delete('/applications/:id', (req, res) => {
+  db.deleteJob(req.params.id, (err, suc) => {
+    if (err) {console.log(err)}
+    else {res.send('success')}
+  })
 })
 
 app.listen(port, () => console.log(`Listening on ${port} brother`));

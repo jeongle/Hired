@@ -59,15 +59,16 @@ class Applications extends Component {
               <button type="button" className="plusbutt" onClick={() => this.renderForm('todos')}>
                 <FontAwesomeIcon icon="plus" />
               </button>
-              {this.props.applications[0].map((todo, index) => (
+              {(!!this.props.todos) ? this.props.todos.map((todo, index) => (
                 <Job 
                   todo={todo} 
-                  key={index} 
-                  index={index} 
+                  key={todo._id} 
+                  i={index}
+                  index={todo._id} 
                   section={'todos'} 
                   removeApp={this.props.removeApp} 
                   progressApp={this.props.progressApp} />
-              ))}
+              )) : null}
             </div>
           </div>
           <div className="inProg">
@@ -76,15 +77,15 @@ class Applications extends Component {
               <button type="button" className="plusbutt" onClick={() => this.renderForm('inProgs')}>
                 <FontAwesomeIcon icon="plus" />
               </button>
-              {this.props.applications[1].map((todo, index) => (
+              {(!!this.props.todos) ? this.props.inProgs.map((todo, index) => (
                 <Job 
                   todo={todo} 
-                  key={index} 
-                  index={index} 
+                  key={todo._id} 
+                  index={todo._id} 
                   section={'inProgs'} 
                   removeApp={this.props.removeApp} 
                   progressApp={this.props.progressApp} />
-              ))}
+              )) : null}
             </div>
           </div>
           <div className="completed">
@@ -93,15 +94,16 @@ class Applications extends Component {
               <button type="button" className="plusbutt" onClick={() => this.renderForm('completeds')}>
                 <FontAwesomeIcon icon="plus" />
               </button>
-              {this.props.applications[2].map((todo, index) => (
+              {(!!this.props.todos) ? this.props.completeds.map((todo, index) => (
                 <Job 
                   todo={todo} 
-                  key={index} 
-                  index={index} 
+                  key={index._id} 
+                  i={index}
+                  index={todo._id} 
                   section={'completeds'} 
                   removeApp={this.props.removeApp} 
                   offerApp={this.props.offerApp} />
-              ))}
+              )) : null}
             </div>
           </div>
         </div>
