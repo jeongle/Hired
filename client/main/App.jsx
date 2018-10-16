@@ -30,9 +30,8 @@ class App extends Component {
   }
 
   addApp(category, job) {
-    let update = this.state[category].concat(job);
     this.setState({
-      category: update,
+      [`${category}`]: [...this.state[category], job],
     });
   }
 

@@ -3,7 +3,7 @@
   grid-template-columns: auto auto auto;
 }
 
-span{
+span {
   letter-spacing: 2px;
   font-weight: bold;
   display: inline-block;
@@ -11,11 +11,11 @@ span{
   color: rgba(71, 71, 71, 0.582);
 }
 
-.center{
+.center {
   text-align: center;
 }
 
-.plusbutt{
+.plusbutt {
   cursor: pointer;
   border: none;
   background-color: inherit;
@@ -26,6 +26,6 @@ span{
   font-size: 16px;
 }
 
-.plusbutt:hover{
+.plusbutt:hover {
   color: rgba(33, 66, 109, 0.836)
 }
