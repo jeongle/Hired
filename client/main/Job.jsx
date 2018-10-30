@@ -4,7 +4,7 @@ const Job = (props) => {
   const prog = (props.section !== 'completeds') ?
     <button 
       className="prog"
-      onClick={() => props.progressApp(props.section, props.index, props.i)}>
+      onClick={() => props.progressApp(props.section, props.job._id, props.i)}>
       &#9994;
     </button> :
     null;
@@ -13,12 +13,12 @@ const Job = (props) => {
     <div>
       <button
         className="offer"
-        onClick={() => props.offerApp('offer', props.index, props.i)} >
+        onClick={() => props.offerApp('offer', props.job._id, props.i)} >
         Offer? &#9732;
       </button>
       <button
         className="rejection"
-        onClick={() => props.offerApp('rejection', props.index, props.i)} >
+        onClick={() => props.offerApp('rejection', props.job._id, props.i)} >
         Rejection? &#9760;
       </button>
     </div> :
@@ -27,21 +27,21 @@ const Job = (props) => {
   return (
     <div className="Job">
       <div className="title">
-        <div>{props.todo.jobTitle}</div>
+        <div>{props.job.jobTitle}</div>
         <button 
           className="delete"
-          onClick={() => props.removeApp(props.section, props.index, props.i)}>
+          onClick={() => props.removeApp(props.section, props.job._id, props.i)}>
           X
         </button>
       </div>
       <div className="company">
-        Company: {props.todo.company}
+        Company: {props.job.company}
       </div>
       <div className="location">
-        Location: {props.todo.location}
+        Location: {props.job.location}
       </div>
       <div className="url">
-        <a target="_blank" href={`https://www.${props.todo.url}` }>Link</a>
+        <a target="_blank" href={`https://www.${props.job.url}` }>Link</a>
         {prog}
         {offer}
       </div>

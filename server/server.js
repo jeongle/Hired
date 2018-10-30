@@ -20,7 +20,7 @@ app.post('/applications', (req, res) => {
   db.postNewJob(req.body, (err, suc) => {
     if (err) {console.log(err)};
   })
-  res.send('u suck');
+  res.send('Unable to post');
 });
 
 app.delete('/applications/:id', (req, res) => {

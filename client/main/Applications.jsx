@@ -1,12 +1,10 @@
 import React, { Component } from "react";
-import Job from "./Job.jsx";
+import Todos from "./Todos.jsx";
+import InProgs from "./InProgs.jsx";
+import Completeds from "./Completeds.jsx";
 import NewJobModal from "./NewJobModal.jsx";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import "./css/Applications.css";
 
-library.add(faPlus);
 
 class Applications extends Component {
   constructor(props) {
@@ -46,67 +44,33 @@ class Applications extends Component {
   render() {
     let Modal;
     Modal = (this.state.showForm) ?
-      <NewJobModal submitJob={() => this.submitJob(this.category)} editJob={this.editJob}/> :
+      <NewJobModal 
+        submitJob={() => this.submitJob(this.category)} 
+        editJob={this.editJob}/> :
       null;
 
     return (
       <div>
         {Modal}
         <div className="Applications">
-          <div className="todo">
-            <div className="center">
-              <span>TO APPLY </span>
-              <button type="button" className="plusbutt" onClick={() => this.renderForm('todos')}>
-                <FontAwesomeIcon icon="plus" />
-              </button>
-              {(!!this.props.todos) ? this.props.todos.map((todo, index) => (
-                <Job 
-                  todo={todo} 
-                  key={todo._id} 
-                  i={index}
-                  index={todo._id} 
-                  section={'todos'} 
-                  removeApp={this.props.removeApp} 
-                  progressApp={this.props.progressApp} />
-              )) : null}
-            </div>
-          </div>
-          <div className="inProg">
-            <div className="center">
-              <span>IN PROGRESS </span>
-              <button type="button" className="plusbutt" onClick={() => this.renderForm('inProgs')}>
-                <FontAwesomeIcon icon="plus" />
-              </button>
-              {(!!this.props.todos) ? this.props.inProgs.map((todo, index) => (
-                <Job 
-                  todo={todo} 
-                  key={todo._id}
-                  i={index}
-                  index={todo._id} 
-                  section={'inProgs'} 
-                  removeApp={this.props.removeApp} 
-                  progressApp={this.props.progressApp} />
-              )) : null}
-            </div>
-          </div>
-          <div className="completed">
-            <div className="center">
-              <span>COMPLETED </span>
-              <button type="button" className="plusbutt" onClick={() => this.renderForm('completeds')}>
-                <FontAwesomeIcon icon="plus" />
-              </button>
-              {(!!this.props.todos) ? this.props.completeds.map((todo, index) => (
-                <Job 
-                  todo={todo} 
-                  key={index._id} 
-                  i={index}
-                  index={todo._id} 
-                  section={'completeds'} 
-                  removeApp={this.props.removeApp} 
-                  offerApp={this.props.offerApp} />
-              )) : null}
-            </div>
-          </div>
+          <Todos 
+            renderForm={this.renderForm}
+            todos={this.props.todos}
+            removeApp={this.props.removeApp}
+            progressApp={this.props.progressApp}
+          />
+          <InProgs 
+            renderForm={this.renderForm}
+            inProgs={this.props.inProgs}
+            removeApp={this.props.removeApp}
+            progressApp={this.props.progressApp}
+          />
+          <Completeds
+            renderForm={this.renderForm}
+            completeds={this.props.completeds}
+            removeApp={this.props.removeApp}
+            progressApp={this.props.progressApp}
+          />
         </div>
       </div>
     )
