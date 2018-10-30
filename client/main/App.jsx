@@ -72,7 +72,7 @@ class App extends Component {
 
   progressApp(category, index, i) {
     let job = this.state[category][i];
-    this.removeApp(category, index);
+    this.removeApp(category, i);
     if (category === 'todos') {
       this.addApp('inProgs', job);
     }
