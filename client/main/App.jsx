@@ -5,7 +5,6 @@ import Applications from "./Applications.jsx";
 import Plots from "./Plots.jsx";
 import axios from 'axios';
 import "./css/App.css";
-import dummyData from './dummydata.js';
 
 class App extends Component {
   constructor(props) {
@@ -37,7 +36,6 @@ class App extends Component {
       .catch(err => {
         console.log(err);
       })
-      console.log(this.state);
   }
 
   componentDidMount() {
@@ -53,30 +51,23 @@ class App extends Component {
   }
 
   addApp(category, job) {
-    // axios.post('/applications', {
-    //   section: category,
-    //   jobTitle: job.jobTitle,
-    //   company: job.company,
-    //   location: job.location,
-    //   url: job.url,
-    //   status: job.status,
-    //   deadline: job.deadline
-    // })
-    // .then(() => this.getAll())
-    // .catch(() => console.log('error posting'));
-    this.setState({
-      [`${category}`]: [...this.state[category], job],
-    });
+    axios.post('/applications', {
+      section: category,
+      jobTitle: job.jobTitle,
+      company: job.company,
+      location: job.location,
+      url: job.url,
+      status: job.status,
+      deadline: job.deadline
+    })
+    .then(() => this.getAll())
+    .catch(() => console.log('error posting'));
   }
 
-  removeApp(category, index, i) {
-    // axios.delete('/applications/' + index)
-    //   .then(() => this.getAll())
-    //   .catch(() => console.log('unsuccessful deletion'))
-    let section = this.state[category][i]
-    this.setState({
-      [`${category}`]: section,
-    })
+  removeApp(category, index) {
+    axios.delete('/applications/' + index)
+      .then(() => this.getAll())
+      .catch(() => console.log('unsuccessful deletion'))
   }
 
   progressApp(category, index, i) {
@@ -131,3 +122,5 @@ class App extends Component {
 }
 
 export default App;
+
+//

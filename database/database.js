@@ -21,6 +21,7 @@ const JobSchema = new Schema({
 const Job = mongoose.model('Job', JobSchema);
 
 const postNewJob = (fields, callback) => {
+  console.log(fields);
   const job = new Job({
     section: fields.section,
     jobTitle: fields.jobTitle,

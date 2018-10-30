@@ -18,7 +18,7 @@ app.get('/applications', (req, res) => {
 
 app.post('/applications', (req, res) => {
   db.postNewJob(req.body, (err, suc) => {
-    if (err) {};
+    if (err) {console.log(err)};
   })
   res.send('u suck');
 });

@@ -80,7 +80,7 @@ class Applications extends Component {
               {(!!this.props.todos) ? this.props.inProgs.map((todo, index) => (
                 <Job 
                   todo={todo} 
-                  key={todo._id} 
+                  key={todo._id}
                   i={index}
                   index={todo._id} 
                   section={'inProgs'} 
