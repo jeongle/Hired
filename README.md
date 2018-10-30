@@ -2,8 +2,7 @@
 
  
 ## A better way to organize your job applications than a plain old spreadsheet ##
-
-### For fellow job-searchers such as myself! ###
+## For fellow job-searchers such as myself! ##
 
 ## Summary ##
   > Hired is an application that will store the states of your job applications. It consists of a to do, in progress, and completed section that displays the job titles, companies, and more. Along with this information, Hired will keep track of your daily productivity, and provide metrics on how much activity you have spent weekly completing applications. There will also be some metrics to describe the distribution of your types of roles that you have applied for, or what types of roles you are hearing back the most. 
