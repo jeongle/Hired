@@ -5,15 +5,14 @@ import Applications from "./Applications.jsx";
 import Plots from "./Plots.jsx";
 import axios from 'axios';
 import "./css/App.css";
-import dummyData from './dummydata.js';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      todos: dummyData.todos,
-      inProgs: dummyData.inProgs,
-      completeds: dummyData.completeds,
+      todos: [],
+      inProgs: [],
+      completeds: [],
       showApps: true,
       showPlots: false,
     },
@@ -37,7 +36,6 @@ class App extends Component {
       .catch(err => {
         console.log(err);
       })
-      console.log(this.state);
   }
 
   componentDidMount() {
@@ -64,18 +62,12 @@ class App extends Component {
     })
     .then(() => this.getAll())
     .catch(() => console.log('error posting'));
-    // this.setState({
-    //   [`${category}`]: [...this.state[category], job],
-    // });
   }
 
   removeApp(category, index) {
     axios.delete('/applications/' + index)
       .then(() => this.getAll())
       .catch(() => console.log('unsuccessful deletion'))
-    // this.setState({
-    //   [`${category}`]: section,
-    // })
   }
 
   progressApp(category, index, i) {
